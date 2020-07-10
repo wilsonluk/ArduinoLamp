@@ -19,12 +19,10 @@ void changeFanSpeed( uint16_t duty_cycle) {
     OCR2B = duty_cycle;
 }
 
+//Placeholder; Ramps fan up and down
 void fanTask(void *pvParameters) {
   (void) pvParameters;
+  changeFanSpeed(4);
   for (;;) {
-    for (int i = 2; i < 75; i += 1) {
-      changeFanSpeed(i);
-      vTaskDelayMS(100);
-    }
   }
 }

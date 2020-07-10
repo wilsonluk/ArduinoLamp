@@ -1,26 +1,57 @@
-#include <main.h>
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
 #include <fan.h>
+#include <uvlo.h>
+#include <temp.h>
+#include <main.h>
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   //Serial.println(TEMP_SENSOR_TIME);
 
+  //--------------------- TEMPORARY ----------------------//
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+
+  ICR1=511;
+  OCR1A=100;
+  OCR1B=100;
+
+  TCCR1A = 0;
+  TCCR1B = 0;
+
+  TCCR1A |= (1 << COM1A1)|(1 << COM1B1);
+  // set none-inverting mode
+
+  TCCR1A |= (1 << WGM11);
+  TCCR1B |= (1 << WGM12)|(1 << WGM13);
+  // set Fast PWM mode using ICR1 as TOP
+    
+  TCCR1B |= (1 << CS10);
+  // START the timer with no prescaler
+  //--------------------- TEMPORARY ----------------------//
+
   if (startTempSensor()) {
     for(;;) {}
   }
 
   startFanControl();
-  changeFanSpeed(2);
 
   xTaskCreate(
     temperatureTask,
     "Temperature",
+    128,
+    nullptr,
+    2,
+    nullptr);
+
+  xTaskCreate(
+    uvloTask,
+    "Under Voltage Lockout",
     128,
     nullptr,
     2,
@@ -45,38 +76,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-}
-
-uint8_t startTempSensor() {
-  one_wire = OneWire(TEMP_SENSOR_INPUT);
-  temp_sensor = DallasTemperature(&one_wire);
-  temp_sensor.begin();
-
-  if (temp_sensor.getDeviceCount() != 1) return 1;
-
-  temp_sensor.getAddress(temp_sensor_addr, 0);
-  temp_sensor.setResolution(temp_sensor_addr, temp_resolution);
-  temp_sensor.setWaitForConversion(false);
-  temp_sensor.setHighAlarmTemp(temp_sensor_addr, TEMP_ALARM);
-  
-  return 0;
-}
-
-void temperatureTask(void *pvParameters) {
-  (void) pvParameters;
-
-  for (;;) {
-    Serial.print("Temperature: ");
-    Serial.print(checkTemperature(), 2);
-    Serial.println("C");
-    vTaskDelayMS(5000);
-  }
-}
-
-float checkTemperature() {
-  temp_sensor.requestTemperatures();
-  waitForTemp();
-  return temp_sensor.getTempCByIndex(0);  
 }
 
 void TaskBlink(void *pvParameters)  // This is a task.
