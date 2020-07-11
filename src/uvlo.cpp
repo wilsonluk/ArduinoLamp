@@ -5,14 +5,24 @@
 #include <main.h>
 #include <uvlo.h>
 
+void uvloSetup() {
+    initial_voltage = inputVoltage();
+    uvp_threshold   = initial_voltage * 0.95;  
+    uvlo_threshold  = initial_voltage * 0.9;
+}
+
 void uvloTask (void *pvParameters) {
-    uint16_t initial_voltage = inputVoltage();
-    uint16_t uvp_threshold   = initial_voltage * 0.95;  
-    uint16_t uvlo_threshold  = initial_voltage * 0.9;
+    uvloSetup();
 
     for (;;) {
         uint16_t read_voltage = inputVoltage();
-        //Under Voltage Lockout
+
+        if ((read_voltage < uvlo_threshold) || (read_voltage < uvlo_limit)) {
+            
+        } else if (read_voltage < uvp_threshold) {
+
+        }
+
         vTaskDelayMS(500);
     }
 }

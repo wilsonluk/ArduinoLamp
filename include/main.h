@@ -27,7 +27,7 @@
 
 //__________Constant Values__________
 static const uint16_t voltage_divider  = 5700;
-static const uint16_t uvlo_limit = 4000;
+static const uint16_t uvlo_limit = 4800;
 static const uint8_t  temp_resolution = 10;
 
 //_____________Variables_____________
