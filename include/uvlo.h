@@ -15,9 +15,8 @@
 void uvloSetup();
 void uvloTask(void *pvParameters);
 
-//Variables
-uint16_t initial_voltage;
-uint16_t uvp_threshold;
-uint16_t uvlo_threshold;
+static uint16_t initial_voltage;
+static uint16_t uvp_threshold;
+static uint16_t uvlo_threshold;
 
 #endif

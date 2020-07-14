@@ -9,9 +9,9 @@
 
 //______Digital Pin Assignments______
 #define TEMP_SENSOR_INPUT  2
-#define FAN_CONTROL        3    //Timer 2 Control prevents use of pin 11 for PWM
-#define COLD_WHITE_CONTROL 9
-#define WARM_WHITE_CONTROL 10
+#define FAN_CONTROL        3    //Timer 2
+#define COLD_WHITE_CONTROL 9    //Timer 1 Fast PWM
+#define WARM_WHITE_CONTROL 10   //Timer 1 Fast PWM
 
 //_______Analog Pin Assignments______
 #define BRIGHTNESS_POTENTIOMETER A4
@@ -21,8 +21,6 @@
 //______________Macros_______________
 #define vTaskDelayMS(ms) (vTaskDelay(ms / portTICK_PERIOD_MS))
 
-#define waitForTemp()    (vTaskDelayMS(TEMP_SENSOR_TIME))
-#define TEMP_SENSOR_TIME ((750 / (1 << (12 - temp_resolution))) + 1)
 #define TEMP_LIMIT 85
 
 //__________Constant Values__________
@@ -30,18 +28,18 @@ static const uint16_t voltage_divider  = 5700;
 static const uint16_t uvlo_limit = 4800;
 static const uint8_t  temp_resolution = 10;
 
-//_____________Variables_____________
-static uint16_t initial_voltage;
-static uint16_t sag_voltage;
-static uint8_t uvlo_status = 0;
-static uint16_t brightness = 450;
+//__________Shared Variables_________
 
-static uint8_t otp_status = 0;
+//Voltage Monitor (uvlo)
+static volatile uint8_t uvlo_status = 0;
 
-//Temperature Sensor
-static OneWire one_wire;
-static DallasTemperature temp_sensor;
-static DeviceAddress temp_sensor_addr;
+//LED Driver (led)
+static volatile uint16_t max_brightness = 450;
+volatile uint16_t target_blue;
+volatile uint16_t target_yellow;
+
+//Temperature Sensor (temp)
+static volatile uint8_t otp_status = 0;
 
 //_____________Functions_____________
 

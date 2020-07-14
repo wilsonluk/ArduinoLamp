@@ -18,7 +18,6 @@
 //Functions
 void startFanControl();
 void changeFanSpeed( uint16_t duty_cycle );
-
 void fanTask(void *pvParameters);
 
 #endif

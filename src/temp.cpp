@@ -1,7 +1,10 @@
+//DS18B20 Temperature Monitoring
+
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
 #include <DallasTemperature.h>
 #include <main.h>
+#include <temp.h>
 
 uint8_t startTempSensor() {
   one_wire = OneWire(TEMP_SENSOR_INPUT);

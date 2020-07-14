@@ -3,6 +3,8 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
+#include <led.h>
+#include <potentiometer.h>
 #include <fan.h>
 #include <uvlo.h>
 #include <temp.h>
@@ -11,29 +13,6 @@
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  //Serial.println(TEMP_SENSOR_TIME);
-
-  //--------------------- TEMPORARY ----------------------//
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
-
-  ICR1=511;
-  OCR1A=100;
-  OCR1B=100;
-
-  TCCR1A = 0;
-  TCCR1B = 0;
-
-  TCCR1A |= (1 << COM1A1)|(1 << COM1B1);
-  // set none-inverting mode
-
-  TCCR1A |= (1 << WGM11);
-  TCCR1B |= (1 << WGM12)|(1 << WGM13);
-  // set Fast PWM mode using ICR1 as TOP
-    
-  TCCR1B |= (1 << CS10);
-  // START the timer with no prescaler
-  //--------------------- TEMPORARY ----------------------//
 
   if (startTempSensor()) {
     for(;;) {}
@@ -68,7 +47,23 @@ void setup() {
   xTaskCreate(
     TaskBlink,
     "Blink",
-    123,
+    64,
+    nullptr,
+    2,
+    nullptr);
+
+  xTaskCreate(
+    potentiometerTask,
+    "User Input",
+    128,
+    nullptr,
+    2,
+    nullptr);
+
+  xTaskCreate(
+    ledTask,
+    "LED Driver",
+    128,
     nullptr,
     2,
     nullptr);
