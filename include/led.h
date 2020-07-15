@@ -7,6 +7,12 @@
 
 void ledDriverSetup();
 void updateBrightness();
+
+void changeTargetBrightness(uint16_t blue, uint16_t yellow);
+
 void ledTask(void *pvParameters);
+
+static volatile uint16_t target_blue;
+static volatile uint16_t target_yellow;
 
 #endif

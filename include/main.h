@@ -35,8 +35,6 @@ static volatile uint8_t uvlo_status = 0;
 
 //LED Driver (led)
 static volatile uint16_t max_brightness = 450;
-volatile uint16_t target_blue;
-volatile uint16_t target_yellow;
 
 //Temperature Sensor (temp)
 static volatile uint8_t otp_status = 0;

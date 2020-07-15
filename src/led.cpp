@@ -22,13 +22,14 @@ void ledDriverSetup() {
     TCCR1B |= (1 << CS10);
 }
 
-void updateBrightness(void *pvParameters) {
+void changeTargetBrightness(uint16_t blue, uint16_t yellow) {
+    target_blue = blue;
+    target_yellow = yellow;
+}
+
+void updateBrightness() {
     while (1) {
-        vTaskDelayMS(25);
-        
-        Serial.print(target_blue);
-        Serial.print(" ");
-        Serial.println(target_yellow);
+        vTaskDelayMS(15);
                 
         if (OCR1A < target_blue) {
             OCR1A++;

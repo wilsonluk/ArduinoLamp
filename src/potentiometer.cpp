@@ -2,6 +2,7 @@
 #include <Arduino_FreeRTOS.h>
 #include <main.h>
 #include <potentiometer.h>
+#include <led.h>
 
 void pollPotentiometers(uint16_t *brightness, uint16_t *color) {
     *brightness = analogRead(BRIGHTNESS_POTENTIOMETER);
@@ -18,8 +19,7 @@ void calculateLogValues(uint16_t *brightness, uint16_t *color) {
     uint32_t yellow_driver_val = (uint32_t) log_brightness * (*color) / 1025;
     uint32_t blue_driver_val   = (uint32_t) log_brightness * (1024 - (*color)) / 1025;
 
-    target_blue   = blue_driver_val;
-    target_yellow = yellow_driver_val;
+    changeTargetBrightness((uint16_t) blue_driver_val, (uint16_t) yellow_driver_val);
 }
 
 void potentiometerTask(void *pvParameters) {
@@ -29,6 +29,6 @@ void potentiometerTask(void *pvParameters) {
         pollPotentiometers(&brightness, &color);
         calculateLogValues(&brightness, &color);
 
-        vTaskDelayMS(100);
+        vTaskDelayMS(10);
     }
 }
