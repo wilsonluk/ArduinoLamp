@@ -1,12 +1,15 @@
+//LED Lamp - Potentiometer Polling
+
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
+
 #include <main.h>
 #include <potentiometer.h>
 #include <led.h>
 
 void pollPotentiometers(uint16_t *brightness, uint16_t *color) {
     *brightness = analogRead(BRIGHTNESS_POTENTIOMETER);
-    *color      = 511/*analogRead(COLOR_POTENTIOMETER)*/;
+    *color      = analogRead(COLOR_POTENTIOMETER);
 }
 
 void calculateLogValues(uint16_t *brightness, uint16_t *color) {

@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
-#include <main.h>
+
 #include <avr/pgmspace.h>
 
 void pollPotentiometers(uint16_t *brightness, uint16_t *color);

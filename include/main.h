@@ -4,8 +4,6 @@
 //Libraries
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
-#include <OneWire.h>
-#include <DallasTemperature.h>
 
 //______Digital Pin Assignments______
 #define TEMP_SENSOR_INPUT  2
@@ -21,27 +19,20 @@
 //______________Macros_______________
 #define vTaskDelayMS(ms) (vTaskDelay(ms / portTICK_PERIOD_MS))
 
-#define TEMP_LIMIT 85
+#define TEMP_LIMIT 50
 
 //__________Constant Values__________
 static const uint16_t voltage_divider  = 5700;
-static const uint16_t uvlo_limit = 4800;
-static const uint8_t  temp_resolution = 10;
+static const uint16_t uvlo_limit       = 4800;
+static const uint8_t  temp_resolution  = 12;
 
 //__________Shared Variables_________
-
-//Voltage Monitor (uvlo)
-static volatile uint8_t uvlo_status = 0;
 
 //LED Driver (led)
 static volatile uint16_t max_brightness = 450;
 
-//Temperature Sensor (temp)
-static volatile uint8_t otp_status = 0;
-
 //_____________Functions_____________
 
-void TaskBlink(void *pvParameters);
 
 #endif
 

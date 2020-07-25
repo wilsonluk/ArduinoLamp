@@ -13,7 +13,6 @@
 //Functions
 uint8_t startTempSensor();
 float checkTemperature();
-void temperatureTask(void *pvParameters);
 
 static OneWire one_wire;
 static DallasTemperature temp_sensor;

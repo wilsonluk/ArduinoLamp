@@ -1,5 +1,8 @@
+//LED Lamp - LED Driver Control
+
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
+
 #include <main.h>
 #include <led.h>
 
@@ -29,18 +32,34 @@ void changeTargetBrightness(uint16_t blue, uint16_t yellow) {
 
 void updateBrightness() {
     while (1) {
-        vTaskDelayMS(15);
-                
+        vTaskDelayMS(15); 
+        
         if (OCR1A < target_blue) {
-            OCR1A++;
+            if (target_blue - OCR1A > 100) {
+                OCR1A += 5;
+            } else {
+                OCR1A++;
+            }
         } else if (OCR1A > target_blue) {
-            OCR1A--;
+            if (OCR1A - target_blue > 100) {
+                OCR1A -= 5;
+            } else {
+                OCR1A--;
+            }
         }
 
         if (OCR1B < target_yellow) {
-            OCR1B++;
+            if (target_yellow - OCR1B > 100) {
+                OCR1B += 5;
+            } else {
+                OCR1B++;
+            }
         } else if (OCR1B > target_yellow) {
-            OCR1B--;
+            if (OCR1B - target_yellow > 100) {
+                OCR1B -= 5;
+            } else {
+                OCR1B--;
+            }
         }
     }
 }

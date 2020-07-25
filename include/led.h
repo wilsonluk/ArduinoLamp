@@ -3,7 +3,6 @@
 
 #include <Arduino.h>
 #include <Arduino_FreeRTOS.h>
-#include <main.h>
 
 void ledDriverSetup();
 void updateBrightness();
