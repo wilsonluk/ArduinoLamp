@@ -16,7 +16,7 @@ void setup() {
     "Under Voltage Lockout",
     128,
     nullptr,
-    2,
+    4,
     nullptr);
 
   xTaskCreate(
@@ -24,7 +24,7 @@ void setup() {
     "Fan",
     256,
     nullptr,
-    2,
+    3,
     nullptr);
 
   xTaskCreate(

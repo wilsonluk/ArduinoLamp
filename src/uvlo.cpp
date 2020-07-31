@@ -17,11 +17,11 @@ void uvloTask (void *pvParameters) {
 
     for (;;) {
         uint16_t read_voltage = inputVoltage();
-
+        Serial.println(read_voltage);
         if ((read_voltage < uvlo_threshold) || (read_voltage < uvlo_limit)) {
             failSafe();
         }
 
-        vTaskDelayMS(500);
+        vTaskDelayMS(750);
     }
 }
