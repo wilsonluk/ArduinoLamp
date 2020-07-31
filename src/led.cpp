@@ -32,31 +32,31 @@ void changeTargetBrightness(uint16_t blue, uint16_t yellow) {
 
 void updateBrightness() {
     while (1) {
-        vTaskDelayMS(15); 
+        vTaskDelayMS(17); 
         
         if (OCR1A < target_blue) {
-            if (target_blue - OCR1A > 100) {
-                OCR1A += 5;
+            if (target_blue - OCR1A > 10) {
+                OCR1A += 2;
             } else {
                 OCR1A++;
             }
         } else if (OCR1A > target_blue) {
-            if (OCR1A - target_blue > 100) {
-                OCR1A -= 5;
+            if (OCR1A - target_blue > 10) {
+                OCR1A -= 2;
             } else {
                 OCR1A--;
             }
         }
 
         if (OCR1B < target_yellow) {
-            if (target_yellow - OCR1B > 100) {
-                OCR1B += 5;
+            if (target_yellow - OCR1B > 10) {
+                OCR1B += 2;
             } else {
                 OCR1B++;
             }
         } else if (OCR1B > target_yellow) {
-            if (OCR1B - target_yellow > 100) {
-                OCR1B -= 5;
+            if (OCR1B - target_yellow > 10) {
+                OCR1B -= 2;
             } else {
                 OCR1B--;
             }
