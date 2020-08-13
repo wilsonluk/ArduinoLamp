@@ -10,6 +10,12 @@ void pollPotentiometers(uint16_t *brightness, uint16_t *color);
 void calculateLogValues(uint16_t *brightness, uint16_t *color);
 void potentiometerTask(void *pvParameters);
 
+/* Look up table used to map linear brightness inputs (0-1023 analogInput)
+to a log brightness output 
+
+Range of Output:
+[0, (timer_top_value) * (current_limit) / (LED Driver's max output)]*/
+
 static const uint16_t brightness_lut[1024] PROGMEM = {
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 
 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 

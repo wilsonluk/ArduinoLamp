@@ -31,7 +31,8 @@ void fanTask(void *pvParameters) {
 
     if (startTempSensor() != 0) {
         failSafe();
-        for(;;) {}
+        Serial.println("WARN: Temperature Sensor Not Responding");
+        while (1) {}
     }
 
     double temperature;
@@ -82,7 +83,7 @@ void fanTask(void *pvParameters) {
                 }
             }
 
-            Serial.print("$");
+            /*Serial.print("$");
             Serial.print(temperature);
             Serial.print(" ");
             Serial.print(output);
@@ -90,7 +91,7 @@ void fanTask(void *pvParameters) {
             Serial.print(smoothed_output);
             Serial.print(" ");
             Serial.print(OCR2B);
-            Serial.println(";");
+            Serial.println(";");*/
         }
         trip = 1;
         digitalWrite(13, HIGH);

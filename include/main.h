@@ -6,8 +6,8 @@
 #include <Arduino_FreeRTOS.h>
 
 //______Digital Pin Assignments______
-#define TEMP_SENSOR_INPUT  2
-#define FAN_CONTROL        3    //Timer 2
+#define FAN_CONTROL        3   //Timer 2
+#define TEMP_SENSOR_INPUT  7
 #define COLD_WHITE_CONTROL 9    //Timer 1 Fast PWM
 #define WARM_WHITE_CONTROL 10   //Timer 1 Fast PWM
 
@@ -18,13 +18,13 @@
 
 //______________Macros_______________
 #define vTaskDelayMS(ms) (vTaskDelay(ms / portTICK_PERIOD_MS))
-
 #define TEMP_LIMIT 50
 
 //__________Constant Values__________
-static const uint16_t voltage_divider  = 5700;
-static const uint16_t uvlo_limit       = 4800;
-static const uint8_t  temp_resolution  = 12;
+static const uint16_t voltage_divider   = 34;
+static const uint16_t reference_voltage = 1080;
+static const uint16_t uvlo_limit        = 4500;
+static const uint8_t  temp_resolution   = 12;
 
 //__________Shared Variables_________
 

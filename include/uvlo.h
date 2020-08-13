@@ -7,16 +7,20 @@
 #include <Arduino_FreeRTOS.h>
 #include <main.h>
 
-
-//Macros
-#define inputVoltage() (voltage_divider * 5 / 1023 * analogRead(INPUT_VOLTAGE))
-
-//Functions
+//Functions Declarations
 void uvloSetup();
 void uvloTask(void *pvParameters);
+void changeADCReference(uint8_t mode);
+/*inputVoltage NOTE:
+To prevent context swiching from occuring while the ADC is being sampled,
+the analogRead is kept within a critical section to ensure that the ADC 
+reference is properly switched. Failure to do so can cause inaccurate
+analogRead values.
+*/
+uint16_t inputVoltage();
 
 static uint16_t initial_voltage;
 static uint16_t uvp_threshold;
-static uint16_t uvlo_threshold;
+static uint16_t ovp_threshold;
 
 #endif
