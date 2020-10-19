@@ -1,0 +1,329 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 7
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5F8C0796
+P 1200 2200
+F 0 "J?" H 1118 1875 50  0000 C CNN
+F 1 "POWER_IN" H 1118 1966 50  0000 C CNN
+F 2 "" H 1200 2200 50  0001 C CNN
+F 3 "~" H 1200 2200 50  0001 C CNN
+	1    1200 2200
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	1400 2550 1600 2550
+Text Label 1550 2100 0    50   ~ 0
+VIN
+Text Label 1550 2550 0    50   ~ 0
+PGND
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F8C80E6
+P 1800 2550
+F 0 "#PWR?" H 1800 2350 50  0001 C CNN
+F 1 "GNDPWR" H 1804 2396 50  0000 C CNN
+F 2 "" H 1800 2500 50  0001 C CNN
+F 3 "" H 1800 2500 50  0001 C CNN
+	1    1800 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F8C88E8
+P 2600 2500
+F 0 "#PWR?" H 2600 2300 50  0001 C CNN
+F 1 "GNDPWR" H 2604 2346 50  0000 C CNN
+F 2 "" H 2600 2450 50  0001 C CNN
+F 3 "" H 2600 2450 50  0001 C CNN
+	1    2600 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 2500 2600 2500
+$Sheet
+S 2800 3150 700  700 
+U 5F8C9FBB
+F0 "Logic Power Supply" 50
+F1 "JW5017S.sch" 50
+F2 "VIN" I L 2800 3300 50 
+F3 "FB" I R 3500 3650 50 
+F4 "EN" I L 2800 3700 50 
+F5 "GND" I L 2800 3500 50 
+F6 "VOUT" I R 3500 3400 50 
+$EndSheet
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F8CA766
+P 2600 3500
+F 0 "#PWR?" H 2600 3300 50  0001 C CNN
+F 1 "GNDPWR" H 2604 3346 50  0000 C CNN
+F 2 "" H 2600 3450 50  0001 C CNN
+F 3 "" H 2600 3450 50  0001 C CNN
+	1    2600 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 3500 2600 3500
+Wire Wire Line
+	2200 3300 2200 2100
+$Comp
+L Device:R R?
+U 1 1 5F8CB6B9
+P 2200 3500
+F 0 "R?" H 2130 3454 50  0000 R CNN
+F 1 "105k" H 2130 3545 50  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 2130 3500 50  0001 C CNN
+F 3 "~" H 2200 3500 50  0001 C CNN
+	1    2200 3500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2800 3300 2200 3300
+Wire Wire Line
+	2200 3350 2200 3300
+Connection ~ 2200 3300
+Wire Wire Line
+	2200 3650 2200 3700
+Wire Wire Line
+	2200 3700 2800 3700
+Wire Wire Line
+	1400 2100 1600 2100
+Wire Wire Line
+	2200 2100 2800 2100
+$Comp
+L Device:R R?
+U 1 1 5F8D2DA5
+P 3850 3400
+F 0 "R?" H 3920 3446 50  0000 L CNN
+F 1 "8.45k" H 3920 3355 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3780 3400 50  0001 C CNN
+F 3 "~" H 3850 3400 50  0001 C CNN
+	1    3850 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F8D35A3
+P 3850 3700
+F 0 "R?" H 3920 3746 50  0000 L CNN
+F 1 "1.58k" H 3920 3655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3780 3700 50  0001 C CNN
+F 3 "~" H 3850 3700 50  0001 C CNN
+	1    3850 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F8D3C3C
+P 3850 3850
+F 0 "#PWR?" H 3850 3650 50  0001 C CNN
+F 1 "GNDPWR" H 3854 3696 50  0000 C CNN
+F 2 "" H 3850 3800 50  0001 C CNN
+F 3 "" H 3850 3800 50  0001 C CNN
+	1    3850 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 3400 3650 3400
+Wire Wire Line
+	3650 3400 3650 3250
+Wire Wire Line
+	3650 3250 3850 3250
+Wire Wire Line
+	3500 3650 3650 3650
+Wire Wire Line
+	3650 3650 3650 3550
+Wire Wire Line
+	3650 3550 3850 3550
+Connection ~ 3850 3550
+Wire Wire Line
+	3850 3250 4150 3250
+Connection ~ 3850 3250
+Text GLabel 4150 3250 2    50   Input ~ 0
++5V
+$Sheet
+S 2800 1950 650  700 
+U 5F842E6C
+F0 "LM3481 SEPIC Converter" 50
+F1 "LM3481.sch" 50
+F2 "GND" I L 2800 2500 50 
+F3 "VIN" I L 2800 2100 50 
+F4 "EN" I L 2800 2300 50 
+F5 "VOUT" I R 3450 2300 50 
+$EndSheet
+Text GLabel 2450 1650 0    50   Input ~ 0
+PWR_EN
+Wire Wire Line
+	2450 1650 2450 2300
+Wire Wire Line
+	2450 2300 2800 2300
+$Sheet
+S 5200 1950 700  700 
+U 5F8DD936
+F0 "Fan Power Supply" 50
+F1 "JW5017S.sch" 50
+F2 "VIN" I L 5200 2100 50 
+F3 "FB" I R 5900 2450 50 
+F4 "EN" I L 5200 2500 50 
+F5 "GND" I L 5200 2300 50 
+F6 "VOUT" I R 5900 2150 50 
+$EndSheet
+$Sheet
+S 5200 3150 650  650 
+U 5F8DDC00
+F0 "Warm White Driver" 50
+F1 "LED Driver.sch" 50
+$EndSheet
+Wire Wire Line
+	1400 2200 1400 2550
+$Comp
+L Device:CP C?
+U 1 1 5F8DF17E
+P 1600 2300
+F 0 "C?" H 1718 2346 50  0000 L CNN
+F 1 "330uF 50V" H 1718 2255 50  0000 L CNN
+F 2 "" H 1638 2150 50  0001 C CNN
+F 3 "~" H 1600 2300 50  0001 C CNN
+	1    1600 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1600 2150 1600 2100
+Wire Wire Line
+	1600 2450 1600 2550
+Connection ~ 1600 2550
+Wire Wire Line
+	1600 2550 1800 2550
+Wire Wire Line
+	1600 2100 2200 2100
+Connection ~ 1600 2100
+Connection ~ 2200 2100
+Wire Wire Line
+	3450 2300 4550 2300
+Wire Wire Line
+	4550 2300 4550 2100
+Wire Wire Line
+	4550 2100 5200 2100
+$Comp
+L Device:R R?
+U 1 1 5F8E1E48
+P 6250 2200
+F 0 "R?" H 6320 2246 50  0000 L CNN
+F 1 "25.5k" H 6320 2155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6180 2200 50  0001 C CNN
+F 3 "~" H 6250 2200 50  0001 C CNN
+	1    6250 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5F8E24B5
+P 6250 2500
+F 0 "R?" H 6320 2546 50  0000 L CNN
+F 1 "1.58k" H 6320 2455 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6180 2500 50  0001 C CNN
+F 3 "~" H 6250 2500 50  0001 C CNN
+	1    6250 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 2450 6050 2450
+Wire Wire Line
+	6050 2450 6050 2350
+Wire Wire Line
+	6050 2350 6250 2350
+Connection ~ 6250 2350
+Wire Wire Line
+	5900 2150 6050 2150
+Wire Wire Line
+	6050 2150 6050 2050
+Wire Wire Line
+	6050 2050 6250 2050
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F8E35EA
+P 6250 2650
+F 0 "#PWR?" H 6250 2450 50  0001 C CNN
+F 1 "GNDPWR" H 6254 2496 50  0000 C CNN
+F 2 "" H 6250 2600 50  0001 C CNN
+F 3 "" H 6250 2600 50  0001 C CNN
+	1    6250 2650
+	1    0    0    -1  
+$EndComp
+Text GLabel 5000 2650 0    50   Input ~ 0
+FAN-EN
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F8E400E
+P 4800 2300
+F 0 "#PWR?" H 4800 2100 50  0001 C CNN
+F 1 "GNDPWR" H 4804 2146 50  0000 C CNN
+F 2 "" H 4800 2250 50  0001 C CNN
+F 3 "" H 4800 2250 50  0001 C CNN
+	1    4800 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 2300 5200 2300
+Wire Wire Line
+	5200 2500 5100 2500
+Wire Wire Line
+	5100 2500 5100 2650
+Wire Wire Line
+	5100 2650 5000 2650
+$Sheet
+S 7450 1900 800  800 
+U 5F8E6433
+F0 "PWM Fan Control" 50
+F1 "Arduino_Buck.sch" 50
+F2 "VIN" I L 7450 2050 50 
+F3 "FAN" I R 8250 2050 50 
+F4 "GND" I L 7450 2500 50 
+F5 "FB" I R 8250 2300 50 
+F6 "PWM" I L 7450 2300 50 
+$EndSheet
+Wire Wire Line
+	6250 2050 7450 2050
+Connection ~ 6250 2050
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5F906970
+P 7150 2500
+F 0 "#PWR?" H 7150 2300 50  0001 C CNN
+F 1 "GNDPWR" H 7154 2346 50  0000 C CNN
+F 2 "" H 7150 2450 50  0001 C CNN
+F 3 "" H 7150 2450 50  0001 C CNN
+	1    7150 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 2500 7450 2500
+Text GLabel 7150 2300 0    50   Input ~ 0
+FAN_PWM
+Wire Wire Line
+	7150 2300 7450 2300
+Text GLabel 8500 2300 2    50   Input ~ 0
+FAN_FB
+Wire Wire Line
+	8250 2300 8500 2300
+$Sheet
+S 5200 4150 650  650 
+U 5F8D89C6
+F0 "Cold White Driver" 50
+F1 "LED Driver.sch" 50
+$EndSheet
+$EndSCHEMATC

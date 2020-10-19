@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name ArduinoLamp)(type Legacy)(uri ${KIPRJMOD}/Libraries/ArduinoLamp.lib)(options "")(descr ""))
+)

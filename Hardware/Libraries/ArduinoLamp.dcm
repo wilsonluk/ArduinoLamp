@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LM3481MM
+D Boost, Flyback, SEPIC Regulator Positive Output Step-Up, Step-Up/Step-Down  DC-DC Controller IC 10-VSSOP
+F http://www.ti.com/lit/ds/symlink/lm3481.pdf
+$ENDCMP
+#
+#End Doc Library
