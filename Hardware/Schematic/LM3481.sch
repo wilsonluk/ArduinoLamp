@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 7
+Sheet 2 7
 Title ""
 Date ""
 Rev ""
@@ -18,9 +18,10 @@ L Device:R R7
 U 1 1 5F851C1A
 P 9150 3500
 F 0 "R7" H 9220 3546 50  0000 L CNN
-F 1 "105k" H 9220 3455 50  0000 L CNN
+F 1 "105K" H 9220 3455 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9080 3500 50  0001 C CNN
 F 3 "~" H 9150 3500 50  0001 C CNN
+F 4 "RC0603FR-07105KL" H 9150 3500 50  0001 C CNN "Manufacturer_Part_Number"
 	1    9150 3500
 	1    0    0    -1  
 $EndComp
@@ -29,9 +30,10 @@ L Device:R R8
 U 1 1 5F852752
 P 9150 4000
 F 0 "R8" H 9220 4046 50  0000 L CNN
-F 1 "6.49k" H 9220 3955 50  0000 L CNN
+F 1 "6K49" H 9220 3955 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9080 4000 50  0001 C CNN
 F 3 "~" H 9150 4000 50  0001 C CNN
+F 4 "RS-03K6491FT" H 9150 4000 50  0001 C CNN "Manufacturer_Part_Number"
 	1    9150 4000
 	1    0    0    -1  
 $EndComp
@@ -62,9 +64,10 @@ L Device:C C9
 U 1 1 5F854916
 P 9600 3850
 F 0 "C9" H 9715 3896 50  0000 L CNN
-F 1 "2.2u" H 9715 3805 50  0000 L CNN
+F 1 "2U2" H 9715 3805 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9638 3700 50  0001 C CNN
 F 3 "~" H 9600 3850 50  0001 C CNN
+F 4 "C0805X5R225K500NT" H 9600 3850 50  0001 C CNN "Manufacturer_Part_Number"
 	1    9600 3850
 	1    0    0    -1  
 $EndComp
@@ -85,31 +88,34 @@ L Device:D_Schottky D1
 U 1 1 5F856C41
 P 7250 2900
 F 0 "D1" H 7250 2700 50  0000 C CNN
-F 1 "D_Schottky" H 7100 2800 50  0000 C CNN
-F 2 "Diode_SMD:D_SMC_Handsoldering" H 7250 2900 50  0001 C CNN
+F 1 "SS510" H 7100 2800 50  0000 C CNN
+F 2 "ArduinoLamp:D_SMC_Handsoldering_Shortened" H 7250 2900 50  0001 C CNN
 F 3 "~" H 7250 2900 50  0001 C CNN
+F 4 "C19229" H 7250 2900 50  0001 C CNN "Mouser Part Number"
 	1    7250 2900
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:L_Coupled L1
+L ArduinoLamp:L_Coupled_1324 L1
 U 1 1 5F857E44
 P 6650 2400
 F 0 "L1" V 6604 2544 50  0000 L CNN
-F 1 "SRF1260-6R8YCT-ND" V 6695 2544 50  0000 L CNN
-F 2 "Inductor_SMD:L_Bourns_SRF1260" H 6650 2400 50  0001 C CNN
+F 1 "SRF1260-6R8" V 6695 2544 50  0000 L CNN
+F 2 "ArduinoLamp:L_Bourns_SRF1260_HandSoldering" H 6650 2400 50  0001 C CNN
 F 3 "~" H 6650 2400 50  0001 C CNN
+F 4 "SRF1260-6R8" H 6650 2400 50  0001 C CNN "Manufacturer_Part_Number"
 	1    6650 2400
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Device:C C6
 U 1 1 5F85BFDA
 P 6900 2900
 F 0 "C6" V 7050 3050 50  0000 C CNN
-F 1 "4.7uF" V 6950 3050 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6938 2750 50  0001 C CNN
+F 1 "4U7" V 6950 3050 50  0000 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6938 2750 50  0001 C CNN
 F 3 "~" H 6900 2900 50  0001 C CNN
+F 4 "GRM31CR71H475KA12L" H 6900 2900 50  0001 C CNN "Manufacturer_Part_Number"
 	1    6900 2900
 	0    -1   -1   0   
 $EndComp
@@ -130,34 +136,32 @@ U 1 1 5F868BFB
 P 8300 3750
 F 0 "Q2" H 8504 3796 50  0000 L CNN
 F 1 "AO4264E" H 8504 3705 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8500 3675 50  0001 L CIN
+F 2 "Package_SO:SO-8_3.9x4.9mm_P1.27mm" H 8500 3675 50  0001 L CIN
 F 3 "http://www.aosmd.com/res/data_sheets/AO4262E.pdf" H 8300 3750 50  0001 L CNN
+F 4 "AO4264E" H 8300 3750 50  0001 C CNN "Manufacturer_Part_Number"
 	1    8300 3750
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:R R6
 U 1 1 5F86FEEB
-P 8400 4550
-F 0 "R6" H 8470 4596 50  0000 L CNN
-F 1 "0.006" H 8470 4505 50  0000 L CNN
-F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8330 4550 50  0001 C CNN
-F 3 "~" H 8400 4550 50  0001 C CNN
-	1    8400 4550
+P 8400 4200
+F 0 "R6" H 8470 4246 50  0000 L CNN
+F 1 "0R006" H 8470 4155 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 8330 4200 50  0001 C CNN
+F 3 "~" H 8400 4200 50  0001 C CNN
+F 4 "PA1206FRF070R006L" H 8400 4200 50  0001 C CNN "Manufacturer_Part_Number"
+	1    8400 4200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8400 4750 8800 4750
 Connection ~ 6550 2900
-Wire Wire Line
-	6250 2200 6550 2200
 $Comp
 L ArduinoLamp:LM3481MM IC1
 U 1 1 5F843133
 P 4850 3750
 F 0 "IC1" H 5550 4015 50  0000 C CNN
 F 1 "LM3481MM" H 5550 3924 50  0000 C CNN
-F 2 "LED Power Board parts:SOP50P490X110-10N" H 6100 3850 50  0001 L CNN
+F 2 "Package_SO:VSSOP-10_3x3mm_P0.5mm" H 6100 3850 50  0001 L CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lm3481.pdf" H 6100 3750 50  0001 L CNN
 F 4 "Boost, Flyback, SEPIC Regulator Positive Output Step-Up, Step-Up/Step-Down  DC-DC Controller IC 10-VSSOP" H 6100 3650 50  0001 L CNN "Description"
 F 5 "1.1" H 6100 3550 50  0001 L CNN "Height"
@@ -171,48 +175,35 @@ F 11 "" H 6100 2950 50  0001 L CNN "Mouser Price/Stock"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6250 2200 6250 3750
-Wire Wire Line
 	9600 4000 9600 4750
-Wire Wire Line
-	9150 4150 9150 4750
 $Comp
 L Device:R R4
 U 1 1 5F87CFC4
-P 6400 4150
-F 0 "R4" V 6600 4150 50  0000 C CNN
-F 1 "25.5k" V 6500 4150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 6330 4150 50  0001 C CNN
-F 3 "~" H 6400 4150 50  0001 C CNN
-	1    6400 4150
-	0    1    1    0   
+P 6250 4300
+F 0 "R4" V 6450 4300 50  0000 C CNN
+F 1 "25K5" V 6350 4300 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6180 4300 50  0001 C CNN
+F 3 "~" H 6250 4300 50  0001 C CNN
+F 4 "RS-05K2552FT" H 6250 4300 50  0001 C CNN "Manufacturer_Part_Number"
+	1    6250 4300
+	1    0    0    -1  
 $EndComp
-Connection ~ 8400 4750
 $Comp
 L Device:C C5
 U 1 1 5F87EF23
 P 6700 4150
 F 0 "C5" H 6815 4196 50  0000 L CNN
-F 1 "470nF" H 6815 4105 50  0000 L CNN
+F 1 "470N" H 6815 4105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6738 4000 50  0001 C CNN
 F 3 "~" H 6700 4150 50  0001 C CNN
+F 4 "0603B474K100CT" H 6700 4150 50  0001 C CNN "Manufacturer_Part_Number"
 	1    6700 4150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6250 4050 6550 4050
-Wire Wire Line
-	6550 4050 6550 4150
-Wire Wire Line
-	6550 4150 6550 4750
-Wire Wire Line
 	6250 3850 6700 3850
 Wire Wire Line
 	6700 3850 6700 4000
-Wire Wire Line
-	6550 4750 6700 4750
-Wire Wire Line
-	6700 4300 6700 4750
 Wire Wire Line
 	6550 2900 6550 3050
 Wire Wire Line
@@ -221,10 +212,6 @@ Wire Wire Line
 	8400 3050 8400 3550
 Wire Wire Line
 	4700 3200 4700 4050
-Wire Wire Line
-	8400 4700 8400 4750
-Wire Wire Line
-	8400 4400 8400 4000
 $Comp
 L Device:R R5
 U 1 1 5F8916DF
@@ -233,12 +220,12 @@ F 0 "R5" V 8400 4000 50  0000 C CNN
 F 1 "100" V 8300 4000 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8130 4000 50  0001 C CNN
 F 3 "~" H 8200 4000 50  0001 C CNN
+F 4 "0603WAJ0101T5E" H 8200 4000 50  0001 C CNN "Manufacturer_Part_Number"
 	1    8200 4000
 	0    1    1    0   
 $EndComp
 Wire Wire Line
 	8350 4000 8400 4000
-Connection ~ 8400 4000
 Wire Wire Line
 	8400 4000 8400 3950
 $Comp
@@ -246,17 +233,16 @@ L Device:C C8
 U 1 1 5F89A682
 P 7750 4150
 F 0 "C8" H 7865 4196 50  0000 L CNN
-F 1 "470pF" H 7865 4105 50  0000 L CNN
+F 1 "470P" H 7865 4105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7788 4000 50  0001 C CNN
 F 3 "~" H 7750 4150 50  0001 C CNN
+F 4 "TCC0603COG471J500CT" H 7750 4150 50  0001 C CNN "Manufacturer_Part_Number"
 	1    7750 4150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	7750 4300 7750 4750
 Connection ~ 7750 4750
-Wire Wire Line
-	7750 4750 8400 4750
 Wire Wire Line
 	7750 4000 8050 4000
 Wire Wire Line
@@ -271,9 +257,10 @@ L Device:R R1
 U 1 1 5F89FF81
 P 3100 3000
 F 0 "R1" H 3170 3046 50  0000 L CNN
-F 1 "105k" H 3170 2955 50  0000 L CNN
+F 1 "105K" H 3170 2955 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3030 3000 50  0001 C CNN
 F 3 "~" H 3100 3000 50  0001 C CNN
+F 4 "RC0603FR-07105KL" H 3100 3000 50  0001 C CNN "Manufacturer_Part_Number"
 	1    3100 3000
 	1    0    0    -1  
 $EndComp
@@ -282,19 +269,17 @@ L Device:R R2
 U 1 1 5F8A094F
 P 3100 3550
 F 0 "R2" H 3170 3596 50  0000 L CNN
-F 1 "25.5k" H 3170 3505 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3030 3550 50  0001 C CNN
+F 1 "25K5" H 3170 3505 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3030 3550 50  0001 C CNN
 F 3 "~" H 3100 3550 50  0001 C CNN
+F 4 "RS-05K2552FT" H 3100 3550 50  0001 C CNN "Manufacturer_Part_Number"
 	1    3100 3550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6250 2200 4450 2200
-Wire Wire Line
 	4450 2200 4450 2800
 Wire Wire Line
 	3100 2800 3100 2850
-Connection ~ 6250 2200
 Wire Wire Line
 	3100 3150 3100 3250
 Wire Wire Line
@@ -306,8 +291,6 @@ Wire Wire Line
 Connection ~ 3100 3250
 Wire Wire Line
 	3100 3250 3100 3400
-Wire Wire Line
-	4850 4150 4850 4750
 $Comp
 L Device:R R3
 U 1 1 5F8AC374
@@ -316,6 +299,7 @@ F 0 "R3" H 4170 4296 50  0000 L CNN
 F 1 "442" H 4170 4205 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 4030 4250 50  0001 C CNN
 F 3 "~" H 4100 4250 50  0001 C CNN
+F 4 "	0603WAF4420T5E" H 4100 4250 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4100 4250
 	1    0    0    -1  
 $EndComp
@@ -324,9 +308,10 @@ L Device:C C3
 U 1 1 5F8ACB1D
 P 4100 4600
 F 0 "C3" H 4215 4646 50  0000 L CNN
-F 1 "1.2nF" H 4215 4555 50  0000 L CNN
+F 1 "1N2" H 4215 4555 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4138 4450 50  0001 C CNN
 F 3 "~" H 4100 4600 50  0001 C CNN
+F 4 "C1608C0G1H122JT000N" H 4100 4600 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4100 4600
 	1    0    0    -1  
 $EndComp
@@ -335,9 +320,10 @@ L Device:C C4
 U 1 1 5F8AD2F2
 P 4500 4450
 F 0 "C4" H 4615 4496 50  0000 L CNN
-F 1 "330nF" H 4615 4405 50  0000 L CNN
+F 1 "330N" H 4615 4405 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4538 4300 50  0001 C CNN
 F 3 "~" H 4500 4450 50  0001 C CNN
+F 4 "TCC0603X7R334K500CT" H 4500 4450 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4500 4450
 	1    0    0    -1  
 $EndComp
@@ -350,9 +336,6 @@ Wire Wire Line
 Wire Wire Line
 	4850 3400 7750 3400
 Wire Wire Line
-	6700 4750 7250 4750
-Connection ~ 6700 4750
-Wire Wire Line
 	7550 3750 8100 3750
 Wire Wire Line
 	7550 3950 6250 3950
@@ -361,19 +344,17 @@ L Device:C C7
 U 1 1 5F8D7CD8
 P 7250 4150
 F 0 "C7" H 7365 4196 50  0000 L CNN
-F 1 "100nF" H 7365 4105 50  0000 L CNN
+F 1 "100N" H 7365 4105 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7288 4000 50  0001 C CNN
 F 3 "~" H 7250 4150 50  0001 C CNN
+F 4 "CL10B104KB8NNNC" H 7250 4150 50  0001 C CNN "Manufacturer_Part_Number"
 	1    7250 4150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6250 3750 7250 3750
-Wire Wire Line
 	7250 3750 7250 4000
 Wire Wire Line
 	7250 4300 7250 4750
-Connection ~ 7250 4750
 Wire Wire Line
 	7250 4750 7750 4750
 $Comp
@@ -381,9 +362,10 @@ L Device:C C2
 U 1 1 5F8E5603
 P 2650 3300
 F 0 "C2" H 2765 3346 50  0000 L CNN
-F 1 "2.2uF" H 2765 3255 50  0000 L CNN
+F 1 "2U2" H 2765 3255 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2688 3150 50  0001 C CNN
 F 3 "~" H 2650 3300 50  0001 C CNN
+F 4 "C0805X5R225K500NT" H 2650 3300 50  0001 C CNN "Manufacturer_Part_Number"
 	1    2650 3300
 	1    0    0    -1  
 $EndComp
@@ -409,6 +391,7 @@ F 0 "Q1" H 4004 3496 50  0000 L CNN
 F 1 "2N7000" H 4004 3405 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4000 3375 50  0001 L CIN
 F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 3800 3450 50  0001 L CNN
+F 4 "2N7000" H 3800 3450 50  0001 C CNN "Manufacturer_Part_Number"
 	1    3800 3450
 	1    0    0    -1  
 $EndComp
@@ -435,8 +418,6 @@ Wire Wire Line
 	4500 4600 4500 4750
 Connection ~ 4500 4750
 Wire Wire Line
-	4500 4750 4850 4750
-Wire Wire Line
 	4100 4100 4100 3950
 Wire Wire Line
 	4100 3950 4500 3950
@@ -455,11 +436,6 @@ Wire Wire Line
 Connection ~ 3100 4750
 Wire Wire Line
 	3100 4750 3900 4750
-Connection ~ 6550 4150
-Wire Wire Line
-	4850 4750 6550 4750
-Connection ~ 4850 4750
-Connection ~ 6550 4750
 Wire Wire Line
 	6750 2200 8800 2200
 Wire Wire Line
@@ -471,4 +447,92 @@ Wire Wire Line
 	9600 3350 10150 3350
 Wire Wire Line
 	2050 2800 2650 2800
+Text Label 6550 3750 0    50   ~ 0
+LM3481_VIN
+$Comp
+L power:GNDA #PWR0113
+U 1 1 5F9A8242
+P 5550 5000
+F 0 "#PWR0113" H 5550 4750 50  0001 C CNN
+F 1 "GNDA" H 5555 4827 50  0000 C CNN
+F 2 "" H 5550 5000 50  0001 C CNN
+F 3 "" H 5550 5000 50  0001 C CNN
+	1    5550 5000
+	1    0    0    -1  
+$EndComp
+Connection ~ 7250 4750
+Wire Wire Line
+	6250 4050 6550 4050
+Wire Wire Line
+	6550 4050 6550 4750
+Connection ~ 6550 4750
+Wire Wire Line
+	6550 4750 6700 4750
+Wire Wire Line
+	6700 4300 6700 4750
+Connection ~ 6700 4750
+Wire Wire Line
+	6700 4750 7250 4750
+Wire Wire Line
+	4500 4750 5800 4750
+Wire Wire Line
+	4850 4150 4850 4450
+Wire Wire Line
+	4850 4450 5550 4450
+Wire Wire Line
+	5550 4450 5550 4900
+Connection ~ 5550 4450
+Wire Wire Line
+	5550 4450 6250 4450
+Wire Wire Line
+	7750 4750 8400 4750
+Wire Wire Line
+	8400 4000 8400 4050
+Connection ~ 8400 4000
+Wire Wire Line
+	8400 4350 8400 4750
+Connection ~ 8400 4750
+Wire Wire Line
+	8400 4750 8800 4750
+Wire Wire Line
+	6250 4450 9150 4450
+Wire Wire Line
+	9150 4450 9150 4150
+Connection ~ 6250 4450
+Wire Wire Line
+	5550 4900 5800 4900
+Wire Wire Line
+	5800 4900 5800 4750
+Connection ~ 5550 4900
+Wire Wire Line
+	5550 4900 5550 5000
+Connection ~ 5800 4750
+Wire Wire Line
+	5800 4750 6550 4750
+Wire Wire Line
+	4450 2200 6300 2200
+$Comp
+L Device:R R9
+U 1 1 5FA1346B
+P 6300 2900
+F 0 "R9" H 6370 2946 50  0000 L CNN
+F 1 "20" H 6370 2855 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6230 2900 50  0001 C CNN
+F 3 "~" H 6300 2900 50  0001 C CNN
+F 4 "RS-03K19R6FT" H 6300 2900 50  0001 C CNN "Manufacturer_Part_Number"
+	1    6300 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6300 2750 6300 2200
+Connection ~ 6300 2200
+Wire Wire Line
+	6300 2200 6550 2200
+Wire Wire Line
+	6300 3050 6300 3750
+Wire Wire Line
+	6250 3750 6300 3750
+Connection ~ 6300 3750
+Wire Wire Line
+	6300 3750 7250 3750
 $EndSCHEMATC
