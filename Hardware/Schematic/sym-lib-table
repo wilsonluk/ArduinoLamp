@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name ArduinoLamp)(type Legacy)(uri "Z:/LED Lamp Project/GitHub Repo/Hardware/Libraries/ArduinoLamp.lib")(options "")(descr ""))
-)
