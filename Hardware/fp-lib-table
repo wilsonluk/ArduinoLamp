@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name ArduinoLamp)(type KiCad)(uri ${KIPRJMOD}/Libraries/ArduinoLamp.pretty)(options "")(descr ""))
-)
