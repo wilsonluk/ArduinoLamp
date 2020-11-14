@@ -90,7 +90,8 @@ F 0 "D4" H 6250 4117 50  0000 C CNN
 F 1 "SS34" H 6250 4026 50  0000 C CNN
 F 2 "ArduinoLamp:D_SMC_Handsoldering_Shortened" H 6250 3900 50  0001 C CNN
 F 3 "~" H 6250 3900 50  0001 C CNN
-F 4 "C13763" H 6250 3900 50  0001 C CNN "Mouser Part Number"
+F 4 "" H 6250 3900 50  0001 C CNN "Mouser Part Number"
+F 5 "C13763" H 6250 3900 50  0001 C CNN "Arrow Part Number"
 	1    6250 3900
 	1    0    0    -1  
 $EndComp
