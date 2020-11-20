@@ -37,17 +37,6 @@ F 4 "RS-03K6491FT" H 9150 4000 50  0001 C CNN "Manufacturer_Part_Number"
 	1    9150 4000
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GNDPWR #PWR0101
-U 1 1 5F852F9B
-P 9150 4750
-F 0 "#PWR0101" H 9150 4550 50  0001 C CNN
-F 1 "GNDPWR" H 9154 4596 50  0000 C CNN
-F 2 "" H 9150 4700 50  0001 C CNN
-F 3 "" H 9150 4700 50  0001 C CNN
-	1    9150 4750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9150 3650 9150 3750
 Wire Wire Line
@@ -75,9 +64,6 @@ Wire Wire Line
 	9600 3700 9600 3350
 Connection ~ 9600 3350
 Wire Wire Line
-	9600 4750 9150 4750
-Connection ~ 9150 4750
-Wire Wire Line
 	9600 4750 10000 4750
 Connection ~ 9600 4750
 Wire Wire Line
@@ -88,10 +74,11 @@ L Device:D_Schottky D1
 U 1 1 5F856C41
 P 7250 2900
 F 0 "D1" H 7250 2700 50  0000 C CNN
-F 1 "SS510" H 7100 2800 50  0000 C CNN
-F 2 "ArduinoLamp:D_SMC_Handsoldering_Shortened" H 7250 2900 50  0001 C CNN
+F 1 "MBRD5100" H 7100 2800 50  0000 C CNN
+F 2 "ArduinoLamp:TO-252-2_ConnectedPins" H 7250 2900 50  0001 C CNN
 F 3 "~" H 7250 2900 50  0001 C CNN
-F 4 "C19229" H 7250 2900 50  0001 C CNN "Mouser Part Number"
+F 4 "" H 7250 2900 50  0001 C CNN "Mouser Part Number"
+F 5 "C19229" H 7250 2900 50  0001 C CNN "Arrow Part Number"
 	1    7250 2900
 	-1   0    0    1   
 $EndComp
@@ -103,7 +90,8 @@ F 0 "L1" V 6604 2544 50  0000 L CNN
 F 1 "SRF1260-6R8" V 6695 2544 50  0000 L CNN
 F 2 "ArduinoLamp:L_Bourns_SRF1260_HandSoldering" H 6650 2400 50  0001 C CNN
 F 3 "~" H 6650 2400 50  0001 C CNN
-F 4 "SRF1260-6R8" H 6650 2400 50  0001 C CNN "Manufacturer_Part_Number"
+F 4 "" H 6650 2400 50  0001 C CNN "Manufacturer_Part_Number"
+F 5 "SRF1260-6R8" H 6650 2400 50  0001 C CNN "Mouser Part Number"
 	1    6650 2400
 	0    -1   -1   0   
 $EndComp
@@ -166,10 +154,10 @@ F 3 "http://www.ti.com/lit/ds/symlink/lm3481.pdf" H 6100 3750 50  0001 L CNN
 F 4 "Boost, Flyback, SEPIC Regulator Positive Output Step-Up, Step-Up/Step-Down  DC-DC Controller IC 10-VSSOP" H 6100 3650 50  0001 L CNN "Description"
 F 5 "1.1" H 6100 3550 50  0001 L CNN "Height"
 F 6 "Texas Instruments" H 6100 3450 50  0001 L CNN "Manufacturer_Name"
-F 7 "LM3481MM" H 6100 3350 50  0001 L CNN "Manufacturer_Part_Number"
+F 7 "" H 6100 3350 50  0001 L CNN "Manufacturer_Part_Number"
 F 8 "" H 6100 3250 50  0001 L CNN "Arrow Part Number"
 F 9 "" H 6100 3150 50  0001 L CNN "Arrow Price/Stock"
-F 10 "" H 6100 3050 50  0001 L CNN "Mouser Part Number"
+F 10 "LM3481MM" H 6100 3050 50  0001 L CNN "Mouser Part Number"
 F 11 "" H 6100 2950 50  0001 L CNN "Mouser Price/Stock"
 	1    4850 3750
 	1    0    0    -1  
@@ -308,10 +296,10 @@ L Device:C C3
 U 1 1 5F8ACB1D
 P 4100 4600
 F 0 "C3" H 4215 4646 50  0000 L CNN
-F 1 "1N2" H 4215 4555 50  0000 L CNN
+F 1 "330N" H 4215 4555 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4138 4450 50  0001 C CNN
 F 3 "~" H 4100 4600 50  0001 C CNN
-F 4 "C1608C0G1H122JT000N" H 4100 4600 50  0001 C CNN "Manufacturer_Part_Number"
+F 4 "TCC0603X7R334K500CT" H 4100 4600 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4100 4600
 	1    0    0    -1  
 $EndComp
@@ -320,10 +308,10 @@ L Device:C C4
 U 1 1 5F8AD2F2
 P 4500 4450
 F 0 "C4" H 4615 4496 50  0000 L CNN
-F 1 "330N" H 4615 4405 50  0000 L CNN
+F 1 "1N2" H 4615 4405 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4538 4300 50  0001 C CNN
 F 3 "~" H 4500 4450 50  0001 C CNN
-F 4 "TCC0603X7R334K500CT" H 4500 4450 50  0001 C CNN "Manufacturer_Part_Number"
+F 4 "C1608C0G1H122JT000N" H 4500 4450 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4500 4450
 	1    0    0    -1  
 $EndComp
@@ -380,28 +368,9 @@ Wire Wire Line
 Text Label 2400 2800 0    50   ~ 0
 V_in
 Wire Wire Line
-	3100 2800 4450 2800
-Wire Wire Line
-	3100 3250 3900 3250
-$Comp
-L Transistor_FET:2N7000 Q1
-U 1 1 5F855EA7
-P 3800 3450
-F 0 "Q1" H 4004 3496 50  0000 L CNN
-F 1 "2N7000" H 4004 3405 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4000 3375 50  0001 L CIN
-F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 3800 3450 50  0001 L CNN
-F 4 "2N7000" H 3800 3450 50  0001 C CNN "Manufacturer_Part_Number"
-	1    3800 3450
-	1    0    0    -1  
-$EndComp
-Connection ~ 3900 3250
-Wire Wire Line
-	3900 3250 4500 3250
+	3100 2800 3600 2800
 Text HLabel 2050 2800 0    50   Input ~ 0
 VIN
-Text HLabel 3600 3450 0    50   Input ~ 0
-EN
 Text HLabel 10150 3350 2    50   Input ~ 0
 VOUT
 Connection ~ 4100 4750
@@ -428,38 +397,23 @@ LM3481 SEPIC Converter
 Connection ~ 3900 4750
 Wire Wire Line
 	3900 3650 3900 4750
-Wire Wire Line
-	2200 4750 2650 4750
 Connection ~ 2650 4750
 Wire Wire Line
 	2650 4750 3100 4750
 Connection ~ 3100 4750
 Wire Wire Line
-	3100 4750 3900 4750
+	3100 4750 3600 4750
 Wire Wire Line
 	6750 2200 8800 2200
 Wire Wire Line
 	8800 2200 8800 4750
 Connection ~ 8800 4750
 Wire Wire Line
-	8800 4750 9150 4750
-Wire Wire Line
 	9600 3350 10150 3350
 Wire Wire Line
 	2050 2800 2650 2800
 Text Label 6550 3750 0    50   ~ 0
 LM3481_VIN
-$Comp
-L power:GNDA #PWR0113
-U 1 1 5F9A8242
-P 5550 5000
-F 0 "#PWR0113" H 5550 4750 50  0001 C CNN
-F 1 "GNDA" H 5555 4827 50  0000 C CNN
-F 2 "" H 5550 5000 50  0001 C CNN
-F 3 "" H 5550 5000 50  0001 C CNN
-	1    5550 5000
-	1    0    0    -1  
-$EndComp
 Connection ~ 7250 4750
 Wire Wire Line
 	6250 4050 6550 4050
@@ -474,16 +428,7 @@ Connection ~ 6700 4750
 Wire Wire Line
 	6700 4750 7250 4750
 Wire Wire Line
-	4500 4750 5800 4750
-Wire Wire Line
 	4850 4150 4850 4450
-Wire Wire Line
-	4850 4450 5550 4450
-Wire Wire Line
-	5550 4450 5550 4900
-Connection ~ 5550 4450
-Wire Wire Line
-	5550 4450 6250 4450
 Wire Wire Line
 	7750 4750 8400 4750
 Wire Wire Line
@@ -499,16 +444,6 @@ Wire Wire Line
 Wire Wire Line
 	9150 4450 9150 4150
 Connection ~ 6250 4450
-Wire Wire Line
-	5550 4900 5800 4900
-Wire Wire Line
-	5800 4900 5800 4750
-Connection ~ 5550 4900
-Wire Wire Line
-	5550 4900 5550 5000
-Connection ~ 5800 4750
-Wire Wire Line
-	5800 4750 6550 4750
 Wire Wire Line
 	4450 2200 6300 2200
 $Comp
@@ -535,4 +470,86 @@ Wire Wire Line
 Connection ~ 6300 3750
 Wire Wire Line
 	6300 3750 7250 3750
+Wire Wire Line
+	4850 4450 5450 4450
+Wire Wire Line
+	4500 4750 5450 4750
+Wire Wire Line
+	3900 3250 4500 3250
+Connection ~ 3900 3250
+Wire Wire Line
+	3100 3250 3900 3250
+$Comp
+L Transistor_FET:2N7000 Q1
+U 1 1 5F855EA7
+P 3800 3450
+F 0 "Q1" H 4004 3496 50  0000 L CNN
+F 1 "2N7000" H 4004 3405 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4000 3375 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7000.pdf" H 3800 3450 50  0001 L CNN
+F 4 "2N7000" H 3800 3450 50  0001 C CNN "Manufacturer_Part_Number"
+	1    3800 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R10
+U 1 1 5FBCFFB7
+P 3600 3000
+F 0 "R10" H 3670 3046 50  0000 L CNN
+F 1 "25K5" H 3670 2955 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3530 3000 50  0001 C CNN
+F 3 "~" H 3600 3000 50  0001 C CNN
+F 4 "RS-05K2552FT" H 3600 3000 50  0001 C CNN "Manufacturer_Part_Number"
+	1    3600 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 2850 3600 2800
+Connection ~ 3600 2800
+Wire Wire Line
+	3600 2800 4450 2800
+Wire Wire Line
+	3600 3150 3600 3450
+$Comp
+L Device:D_Zener D5
+U 1 1 5FBD5B24
+P 3600 3950
+F 0 "D5" V 3554 4030 50  0000 L CNN
+F 1 "D_Zener" V 3645 4030 50  0000 L CNN
+F 2 "Diode_SMD:D_SOD-323_HandSoldering" H 3600 3950 50  0001 C CNN
+F 3 "~" H 3600 3950 50  0001 C CNN
+F 4 "MM3Z4V7ST1G" H 3600 3950 50  0001 C CNN "Mouser Part Number"
+	1    3600 3950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3600 3450 3600 3800
+Connection ~ 3600 3450
+Wire Wire Line
+	3600 4100 3600 4750
+Connection ~ 3600 4750
+Wire Wire Line
+	3600 4750 3900 4750
+Text HLabel 2050 3850 0    50   Input ~ 0
+~EN
+Wire Wire Line
+	2050 3850 3500 3850
+Wire Wire Line
+	3500 3850 3500 3450
+Wire Wire Line
+	3500 3450 3600 3450
+Wire Wire Line
+	5450 4450 5450 4750
+Connection ~ 5450 4450
+Wire Wire Line
+	5450 4450 6250 4450
+Connection ~ 5450 4750
+Wire Wire Line
+	5450 4750 6550 4750
+Wire Wire Line
+	8800 4750 9600 4750
+Text HLabel 2100 4750 0    50   Input ~ 0
+GND
+Wire Wire Line
+	2100 4750 2650 4750
 $EndSCHEMATC
