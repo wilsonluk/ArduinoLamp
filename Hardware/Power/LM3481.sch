@@ -37,17 +37,6 @@ F 4 "RS-03K6491FT" H 9150 4000 50  0001 C CNN "Manufacturer_Part_Number"
 	1    9150 4000
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GNDPWR #PWR0101
-U 1 1 5F852F9B
-P 9150 4750
-F 0 "#PWR0101" H 9150 4550 50  0001 C CNN
-F 1 "GNDPWR" H 9154 4596 50  0000 C CNN
-F 2 "" H 9150 4700 50  0001 C CNN
-F 3 "" H 9150 4700 50  0001 C CNN
-	1    9150 4750
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9150 3650 9150 3750
 Wire Wire Line
@@ -75,9 +64,6 @@ Wire Wire Line
 	9600 3700 9600 3350
 Connection ~ 9600 3350
 Wire Wire Line
-	9600 4750 9150 4750
-Connection ~ 9150 4750
-Wire Wire Line
 	9600 4750 10000 4750
 Connection ~ 9600 4750
 Wire Wire Line
@@ -88,8 +74,8 @@ L Device:D_Schottky D1
 U 1 1 5F856C41
 P 7250 2900
 F 0 "D1" H 7250 2700 50  0000 C CNN
-F 1 "SS510" H 7100 2800 50  0000 C CNN
-F 2 "ArduinoLamp:D_SMC_Handsoldering_Shortened" H 7250 2900 50  0001 C CNN
+F 1 "MBRD5100" H 7100 2800 50  0000 C CNN
+F 2 "ArduinoLamp:TO-252-2_ConnectedPins" H 7250 2900 50  0001 C CNN
 F 3 "~" H 7250 2900 50  0001 C CNN
 F 4 "" H 7250 2900 50  0001 C CNN "Mouser Part Number"
 F 5 "C19229" H 7250 2900 50  0001 C CNN "Arrow Part Number"
@@ -310,10 +296,10 @@ L Device:C C3
 U 1 1 5F8ACB1D
 P 4100 4600
 F 0 "C3" H 4215 4646 50  0000 L CNN
-F 1 "1N2" H 4215 4555 50  0000 L CNN
+F 1 "330N" H 4215 4555 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4138 4450 50  0001 C CNN
 F 3 "~" H 4100 4600 50  0001 C CNN
-F 4 "C1608C0G1H122JT000N" H 4100 4600 50  0001 C CNN "Manufacturer_Part_Number"
+F 4 "TCC0603X7R334K500CT" H 4100 4600 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4100 4600
 	1    0    0    -1  
 $EndComp
@@ -322,10 +308,10 @@ L Device:C C4
 U 1 1 5F8AD2F2
 P 4500 4450
 F 0 "C4" H 4615 4496 50  0000 L CNN
-F 1 "330N" H 4615 4405 50  0000 L CNN
+F 1 "1N2" H 4615 4405 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4538 4300 50  0001 C CNN
 F 3 "~" H 4500 4450 50  0001 C CNN
-F 4 "TCC0603X7R334K500CT" H 4500 4450 50  0001 C CNN "Manufacturer_Part_Number"
+F 4 "C1608C0G1H122JT000N" H 4500 4450 50  0001 C CNN "Manufacturer_Part_Number"
 	1    4500 4450
 	1    0    0    -1  
 $EndComp
@@ -411,8 +397,6 @@ LM3481 SEPIC Converter
 Connection ~ 3900 4750
 Wire Wire Line
 	3900 3650 3900 4750
-Wire Wire Line
-	2200 4750 2650 4750
 Connection ~ 2650 4750
 Wire Wire Line
 	2650 4750 3100 4750
@@ -424,8 +408,6 @@ Wire Wire Line
 Wire Wire Line
 	8800 2200 8800 4750
 Connection ~ 8800 4750
-Wire Wire Line
-	8800 4750 9150 4750
 Wire Wire Line
 	9600 3350 10150 3350
 Wire Wire Line
@@ -564,4 +546,10 @@ Wire Wire Line
 Connection ~ 5450 4750
 Wire Wire Line
 	5450 4750 6550 4750
+Wire Wire Line
+	8800 4750 9600 4750
+Text HLabel 2100 4750 0    50   Input ~ 0
+GND
+Wire Wire Line
+	2100 4750 2650 4750
 $EndSCHEMATC
