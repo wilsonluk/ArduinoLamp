@@ -2,6 +2,11 @@ Arduino Lamp Hardware
 =====================
 PCB Files and Libraries for the ArduinoLamp
 
+Lastest PCB revisions created using *[KiCad](https://kicad-pcb.org/)*.
+
+Power Board V1 created using *[EAGLE](https://www.autodesk.com/products/eagle/overview/)* (see ZIP archive).
+
+
 Folder Contents
 -----------------------------------
 * **/BOM**  - Bill of Materials of the PCBs
