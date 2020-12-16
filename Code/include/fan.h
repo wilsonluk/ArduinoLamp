@@ -1,34 +1,39 @@
 #ifndef LED_LAMP_CONTROL_FAN
 #define LED_LAMP_CONTROL_FAN
 
-//______Libraries______
-#include <Arduino.h>
-#include <Arduino_FreeRTOS.h>
+#include <main.h>
 
-//______Functions______
-void startFanControl();
-void fanTask(void *pvParameters);
+/*_______Arduino LED Lamp Fan Controller________
+PWM Fan Controller designed to actively cool the
+LED array. PID Control with a set temperature
+target is used to control the fan speed.
+*/
 
-bool checkForFan();
-uint16_t checkFanVoltage();
+//_________________Functions____________________
 
-//______Constants______
+//Setup Arduino Timer 2B to output fast PWM
+void prepareFanPWM();
+
+//Change duty cycle of PWM fan output
+void changeFanSpeed(byte speed);
+
+//PID Fan Controller
+void fanControlTask(void *pvParameters);
+
+//_________________Constants____________________
 
 //PID Tuning Parameters
 static double Kp = 5;
-static double Ki = 1;
+static double Ki = 4;
 static double Kd = 1;
 
-//Fan Control target temperature
-static const double set_temp = 42;
-
-//Nominal Max Fan Voltage (mV)
-static const uint16_t fan_nominal = 12500;
-
 //Min PWM value to start fan
-static const uint8_t min_fan = 10;
+static const byte min_fan = 10;
 
 //Max PWM value (prevent exceed operating voltage)
-static const uint8_t max_fan = 150;
+static byte max_fan = 150;
+
+//Target Temperature to maintain in Celcius
+static const double target_temp = 15;
 
 #endif
