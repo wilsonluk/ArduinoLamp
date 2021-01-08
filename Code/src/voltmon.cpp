@@ -1,30 +1,35 @@
-//______Arduino LED Lamp VOltage Monitor______
+//______Arduino LED Lamp Vltage Monitor______
 
 #include <voltmon.h>
 
 void voltMonTask(void *pvParameters) {
-	pinMode(LED_BUILTIN, OUTPUT);
 
 	for (;;) {
 		unsigned int read_value;
 
-		digitalWrite(LED_BUILTIN, HIGH);
+		bool trip = false;
+
+		digitalWrite(LED_BUILTIN, LOW);
 		read_value = checkSenseLine(INPUT_VOLTAGE);
-		digitalWrite(LED_BUILTIN, LOW);
-		if (!checkInput(read_value)) failSafe(ALL);
+		trip |= !checkInput(read_value);
 
-		digitalWrite(LED_BUILTIN, HIGH);
+		vTaskDelayMS(300);
+
 		read_value = checkSenseLine(MAIN_PWR_VOLTAGE);
-		digitalWrite(LED_BUILTIN, LOW);
-		if (!checkOutput(read_value)) failSafe(ALL);
+		trip |= !checkOutput(read_value);
+
+		vTaskDelayMS(300);
+
+		read_value = checkSenseLine(FAN_VOLTAGE);
+		trip |= !checkFan(read_value);
+
+		if (trip) {
+			failSafe(ALL);
+		}
 
 		digitalWrite(LED_BUILTIN, HIGH);
-		read_value = checkSenseLine(FAN_VOLTAGE);
-		digitalWrite(LED_BUILTIN, LOW);
-		if (!checkFan(read_value)) failSafe(ALL);
-
 		
-		vTaskDelayMS(1000);
+		vTaskDelayMS(300);
 	}
 }
 
@@ -78,44 +83,15 @@ void setMonitorLimits(unsigned int input_volt, unsigned int output_volt) {
 
 //Check Input Voltage
 bool checkInput(unsigned int val) {
-	if (val < uvp_input) {
-		Serial.print("Input UVP Triggered: ");
-		Serial.print(val);
-		Serial.println(" mV");
-		return false;
-	} else if (val > ovp_input) {
-		Serial.print("Input OVP Triggered: ");
-		Serial.println(val);
-		Serial.println(" mV");
-		return false;
-	}
-	return true;
+	return (!(val < uvp_input) && !(val > ovp_input));
 }
 
 //Check Output Voltage
 bool checkOutput(unsigned int val){
-	if (val < uvp_output) {
-		Serial.print("Output UVP Triggered: ");
-		Serial.print(val);
-		Serial.println(" mV");
-		return false;
-	} else if (val > ovp_output) {
-		Serial.print("Output OVP Triggered: ");
-		Serial.print(val);
-		Serial.println(" mV");
-		return false;
-	}
-	return true;
+	return (!(val < uvp_output) && !(val > ovp_output));
 }
 
 //Check Fan Voltage
 bool checkFan(unsigned int val) {
-	Serial.println(val);
-	if (val > ovp_fan) {
-		Serial.print("Fan OVP Triggered: ");
-		Serial.print(val);
-		Serial.println(" mV");
-		return false;
-	}
-	return true;
+	return !(val > ovp_fan);
 }

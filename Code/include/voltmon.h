@@ -32,7 +32,7 @@ bool checkFan(unsigned int val);
 /*  ACCPETABLE VOLTAGE TOLERANCE (MARGIN)
 Proportion of error acceptable for meausred voltages 
 before going into failsafe mode*/
-static const float margin = 0.1;
+static const PROGMEM double margin = 0.15;
 
 /*  VOLTAGE DIVIDER
 Since the Arduino cannot read values greater than the
@@ -41,7 +41,7 @@ read through a potential divider. The ratio should be
 expressed as the resistor ratios multipled by 1000, as
 all voltage meausrements are converted to fixed point
 values in mV.*/
-static const unsigned int voltage_divider = 23275;
+static const PROGMEM unsigned int voltage_divider = 23275;
 
 /*  REFERNCE VOLTAGE
 Since measuring external voltages with the VCC input as
@@ -50,7 +50,7 @@ measurements, the ATMega328P's internal voltage reference
 is used. If AREF is slightly different or an external
 voltage refernce is used, adjust this constant. Also in
 fixed point mV.*/
-static const unsigned int reference_voltage = 1058;
+static const PROGMEM unsigned int reference_voltage = 1058;
 
 /*  UNDERVOLTAGE PROTECTION (UVP)
 If the input voltage is too low, the main power converter
@@ -70,13 +70,13 @@ static unsigned int ovp_input = 25000;
 If the meausred value of the
 converter deviates from this value by a margin (see below),
 lamp will revert to failsafe mode. Also in fixed point mV.*/
-static const unsigned int nominal_output = 22000;
+static const PROGMEM unsigned int nominal_output = 22000;
 
 static unsigned int uvp_output = nominal_output * (1 - margin);
 static unsigned int ovp_output = nominal_output * (1 + margin);
 
 /*Nominal Max Fan Voltage (mV)
 Max fan voltage in fixed point mV.*/
-static const unsigned int ovp_fan = 13000;
+static const PROGMEM unsigned int ovp_fan = 13000;
 
 #endif

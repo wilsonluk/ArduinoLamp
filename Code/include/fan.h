@@ -23,9 +23,9 @@ void fanControlTask(void *pvParameters);
 //_________________Constants____________________
 
 //PID Tuning Parameters
-static double Kp = 5;
-static double Ki = 4;
-static double Kd = 1;
+static const PROGMEM double Kp = 5;
+static const PROGMEM double Ki = 4;
+static const PROGMEM double Kd = 5;
 
 //Min PWM value to start fan
 static const byte min_fan = 10;
@@ -34,6 +34,6 @@ static const byte min_fan = 10;
 static byte max_fan = 150;
 
 //Target Temperature to maintain in Celcius
-static const double target_temp = 15;
+static const double target_temp = 42;
 
 #endif

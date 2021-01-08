@@ -1,7 +1,8 @@
+#include <main.h>
+
 #ifndef ARDUINO_LAMP_TEMP
 #define ARDUINO_LAMP_TEMP
 
-#include <main.h>
 #include <DallasTemperature.h>
 
 /*_______Arduino LED Lamp Temperature Senor and Fan Control______
@@ -44,7 +45,7 @@ Incerasing the resolution of the temperature measurement causes the
 sampling time of the sensor to increase.
 (see https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf)
 */
-static const byte  temp_resolution = 12;
+static const byte temp_resolution = 12;
 
 //____________________________Macros_____________________________
 
@@ -57,7 +58,7 @@ static const byte  temp_resolution = 12;
 //___________________________Variables___________________________
 
 //Local Variables
-static OneWire one_wire(7);
+static OneWire one_wire(TEMP_SENSOR_INPUT);
 static DallasTemperature temp_sensor(&one_wire);
 static DeviceAddress sensor_addr;
 

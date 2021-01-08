@@ -8,14 +8,21 @@ Cuts power to various systems on the board. Calledin case of anomaly.
 
 //Shutdown functions of the lamp depending on the input
 void failSafe(byte err_type){
+	error_prnt(F("Failsafe Triggered!\n"));
+
 	taskENTER_CRITICAL();
 
 	//Turn off LEDs (regardless of error type)
-	pinMode(WARM_WHITE_CONTROL, INPUT);
-	pinMode(COLD_WHITE_CONTROL, INPUT);
+	pinMode(COLD_WHITE_CONTROL, OUTPUT);
+	pinMode(WARM_WHITE_CONTROL, OUTPUT);
+
+	digitalWrite(COLD_WHITE_CONTROL, LOW);
+	digitalWrite(WARM_WHITE_CONTROL, LOW);
 
 	switch (err_type) {
 		case OTP:
+			OCR1A = 0;
+			OCR1B = 0;
 			changeFanSpeed(max_fan - min_fan);
 			break;
 		
@@ -28,7 +35,6 @@ void failSafe(byte err_type){
 			break;
 	}
 	Serial.flush();
-
 	blinkCode(err_type);
 }
 
